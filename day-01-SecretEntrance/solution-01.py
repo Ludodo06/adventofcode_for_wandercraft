@@ -17,12 +17,12 @@ def count_dial_hits(
     target: int = 0
 ) -> int:
     """
-    Count how many times the dial PASSES the ZERO value WHILE applying turn commands.
+    Count how many times the dial reaches `target` after applying turn commands.
     Commands are of the form 'L<num>' or 'R<num>'.
     """
     
     dial = start
-    target_passes = 0
+    target_count = 0
 
     for cmd in parse_commands(source):
 
@@ -33,24 +33,14 @@ def count_dial_hits(
             raise ValueError(f"Invalid command: {cmd}")
         
         delta = clicks if direction == 'R' else -clicks
-        raw_end = dial + delta
+        dial = (dial + delta) % modulo
 
-        if delta > 0:
-            # Crossing zero when incrementing (right turn)
-            passes = raw_end // modulo
+        # Check if dial is at target
+        if dial == target:
+            target_count += 1
 
-        elif delta < 0:
-            # Crossing zero when decrementing (left turn)
-            passes = (dial - 1) // modulo - (raw_end - 1) // modulo
-
-        else:
-            passes = 0
-
-        dial = raw_end % modulo
-        target_passes += passes
-
-    return target_passes
+    return target_count
 
 if __name__ == "__main__":
-    filename = "input01.txt"
+    filename = "input.txt"
     print(count_dial_hits(filename))
