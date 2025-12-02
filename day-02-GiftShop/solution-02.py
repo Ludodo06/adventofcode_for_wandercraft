@@ -13,7 +13,6 @@ def parse_input(source: str) -> List[List[int]]:
 
 def track_invalid_ids(
     source: str,
-    
 ) -> int:
     """
     Tracks invalid gift shop item IDs based on provided ID ranges.
