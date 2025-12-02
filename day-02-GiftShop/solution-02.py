@@ -13,7 +13,7 @@ def parse_input(source: str) -> List[List[int]]:
 
 def track_invalid_ids(
     source: str,
-) -> int:
+) -> dict:
     """
     Tracks invalid gift shop item IDs based on provided ID ranges.
     An ID is invalid if it has AT LEAST TWO repeated sequence of digits (e.g., 11, 121212, 33333333)
