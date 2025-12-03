@@ -12,7 +12,7 @@ def parse_input(source: str) -> List[List[int]]:
 
 def get_highest_joltages(
     source: str,
-) -> dict:
+) -> int:
     """
     Returns the highest joltages from the provided banks.
     Each bank contains a list of battery joltages, and the highest joltage
