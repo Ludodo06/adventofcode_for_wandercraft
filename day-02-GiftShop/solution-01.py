@@ -41,4 +41,4 @@ def track_invalid_ids(
 
 if __name__ == "__main__":
     filename = "input.txt"
-    print(track_invalid_ids(filename))
+    print(track_invalid_ids(filename)['sum'])
