@@ -12,21 +12,14 @@ This repository contains my solutions for Advent of Code challenges. Each day ha
 python day-01-SecretEntrance/solution-01.py
 ```
 
-**Repository structure (short)**
-- `day-01-SecretEntrance/`
-- `day-02-GiftShop/`
-- `day-03-Lobby/`
-- `day-04-PrintingDepartment/`
-
 **Answers**
 
 | Day | Name | Part 1 | Part 2 |
 |---:|---|---:|---:|
-| 1 | SecretEntrance | <span title="1055">•••</span> | <span title="6386">•••</span> |
-| 2 | GiftShop | <span title="23701357374">•••</span> | <span title="34284458938">•••</span> |
-| 3 | Lobby | <span title="17554">•••</span> | <span title="175053592950232">•••</span> |
-| 4 | PrintingDepartment | <span title="1569">•••</span> | <span title="9280">•••</span> |
+| 1 | SecretEntrance | <details><summary>•••</summary><code>1055</code></details> | <details><summary>•••</summary><code>6386</code></details> |
+| 2 | GiftShop | <details><summary>•••</summary><code>23701357374</code></details> | <details><summary>•••</summary><code>34284458938</code></details> |
+| 3 | Lobby | <details><summary>•••</summary><code>17554</code></details> | <details><summary>•••</summary><code>175053592950232</code></details> |
+| 4 | PrintingDepartment | <details><summary>•••</summary><code>1569</code></details> | <details><summary>•••</summary><code>9280</code></details> |
 
 **Notes**
 - The solutions are plain Python scripts that read `input.txt` from their folder by default. If you change the input file location, update the script call accordingly.
-- If you'd like, I can add a small runner script to execute all solutions and populate this README automatically.

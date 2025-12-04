@@ -80,7 +80,8 @@ def update_readme(answers: dict):
             if not val:
                 return ""
             t = esc(val)
-            return f'<span title="{t}">•••</span>'
+            # use <details> for click-to-reveal; answer shown inside <code>
+            return f'<details><summary>•••</summary><code>{t}</code></details>'
 
         p1cell = cell(p1)
         p2cell = cell(p2)
