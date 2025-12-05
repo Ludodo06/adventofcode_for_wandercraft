@@ -64,6 +64,41 @@ def get_fresh_ingredients(
     
     return total
 
+#### OTHER APPROACH (less efficient) ####
+
+# def get_fresh_ingredients(
+#     source: str,
+# ) -> int:
+#     """
+#     Return the number of ALL ingredients that are fresh.
+
+#     Putting everything in a set is too long to run for part 2,
+#     so we just count the ranges directly (not forgetting to avoid double-counting).
+#     """
+
+#     fresh_ingredient_ranges, _ = parse_input(source)
+
+#     nb_fresh_ingredients = 0
+
+#     covered = []
+
+#     for start, end in fresh_ingredient_ranges:
+#         # remove overlaps with previous ranges
+#         for (ov_start, ov_end) in covered:
+#             if ov_start <= start <= ov_end:
+#                 start = ov_end + 1
+#             if ov_start <= end <= ov_end:
+#                 end = ov_start - 1
+#             if start <= ov_start and ov_end <= end:
+#                 # current range fully covers previous one
+#                 covered.remove((ov_start, ov_end))
+#                 nb_fresh_ingredients -= (ov_end - ov_start + 1)
+#         if start <= end:
+#             nb_fresh_ingredients += (end - start + 1)
+#             covered.append((start, end))
+    
+#     return nb_fresh_ingredients
+
 if __name__ == "__main__":
     filename = "input.txt"
     print(get_fresh_ingredients(filename))
