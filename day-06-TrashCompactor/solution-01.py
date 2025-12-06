@@ -50,7 +50,6 @@ def solve_math_problem(
     for idx, op in enumerate(opps):
 
         nums = [numbers[row][idx] for row in range(len(numbers))]
-        problem_sol = 0
 
         if op == "+":
             problem_sol = sum(nums)
@@ -59,7 +58,7 @@ def solve_math_problem(
             problem_sol = 1
             for n in nums:
                 problem_sol *= n
-                
+
         else:
             raise ValueError(f"Unknown operation: {op}")
         

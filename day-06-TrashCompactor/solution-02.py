@@ -11,21 +11,39 @@ def parse_input(source: str) -> Tuple[List[List[int]], List[str]]:
     else:
         raise ValueError("Source must be a file path string.")
     
+    max_len = max(len(line) for line in lines)
 
-    numbers = [[int(num) for num in line.split(" ") if num.strip() != ""] for line in lines[:-1]]
+    problems = []
+    current_problem = []
+
+    # To read vertically, we iterate over character positions
+    # and pass to the next problem when we hit a blank column
+    
+    for char_idx in range(max_len):
+
+        current_number_str = ""
+
+        for line_idx in range(len(lines)-1):
+            current_number_str += lines[line_idx][char_idx]
+
+        if current_number_str.strip() == "":
+            if current_problem:
+                problems.append(current_problem)
+                current_problem = []
+        else:
+            current_problem.append(int(current_number_str.strip()))
+
     opps = [op for op in lines[-1].split(" ") if op.strip() != ""]
 
-    if len(numbers[0]) != len(opps):
-        raise ValueError("Number of operations must match number of number lines.")
-        
-    return numbers, opps
+    return problems, opps
 
 
 def solve_math_problem(
     source: str,
 ) -> int:
     """
-    Solve the math problem of the cephalopod's trash compactor.
+    Solve the math problem of the cephalopod's trash compactor (numbers are
+    read vertically).
 
     e,g. for input:
     123 328  51 64 
@@ -34,34 +52,32 @@ def solve_math_problem(
     *   +   *   +
 
     The result is: 
-    
-    123 * 45 * 6 = 33210
-    328 + 64 + 98 = 490
-    51 * 387 * 215 = 4243455
-    64 + 23 + 314 = 401
 
-    Total = 33210 + 490 + 4243455 + 401 = 4277556x
+    The rightmost problem is 4 + 431 + 623 = 1058
+    The second problem from the right is 175 * 581 * 32 = 3253600
+    The third problem from the right is 8 + 248 + 369 = 625
+    Finally, the leftmost problem is 356 * 24 * 1 = 8544
+
+    Total: 1058 + 3253600 + 625 + 8544 = 3263827
     """
 
     numbers, opps = parse_input(source)
 
     total = 0
 
-    for idx, op in enumerate(opps):
-
-        nums = [numbers[row][idx] for row in range(len(numbers))]
-        problem_sol = 0
+    for problem_nums, op in zip(numbers, opps):
 
         if op == "+":
-            problem_sol = sum(nums)
+            problem_sol = sum(problem_nums)
 
         elif op == "*":
             problem_sol = 1
-            for n in nums:
+            for n in problem_nums:
                 problem_sol *= n
+
         else:
             raise ValueError(f"Unknown operation: {op}")
-        
+            
         total += problem_sol
 
     return total
