@@ -21,6 +21,7 @@ python day-01-SecretEntrance/solution-01.py
 | 3 | Lobby | <details><summary>•••</summary><code>17554</code></details> | <details><summary>•••</summary><code>175053592950232</code></details> |
 | 4 | PrintingDepartment | <details><summary>•••</summary><code>1569</code></details> | <details><summary>•••</summary><code>9280</code></details> |
 | 5 | Cafeteria | <details><summary>•••</summary><code>664</code></details> | <details><summary>•••</summary><code>350780324308385</code></details> |
+| 6 | TrashCompactor | <details><summary>•••</summary><code>5733696195703</code></details> | <details><summary>•••</summary><code>10951882745757</code></details> |
 
 **Notes**
 - The solutions are plain Python scripts that read `input.txt` from their folder by default. If you change the input file location, update the script call accordingly.
