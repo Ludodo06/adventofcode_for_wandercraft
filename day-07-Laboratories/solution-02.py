@@ -45,7 +45,7 @@ def find_nb_of_timelines(source: str) -> int:
     
     for row_splits in split_pos:
 
-        for col, count in timeline_counts.items():
+        for col, count in timeline_counts.copy().items():
             if col in row_splits:
                 # Split occurs here
                 timeline_counts[col - 1] = timeline_counts.get(col - 1, 0) + count
