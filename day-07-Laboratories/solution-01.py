@@ -1,6 +1,6 @@
 from typing import List, Tuple
 
-def parse_input(source: str) -> Tuple[List[List[int]], List[str]]:
+def parse_input(source: str) -> Tuple[int, List[List[int]]]:
     """
     Return a clean matrix of split positions
     """
