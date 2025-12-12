@@ -24,6 +24,7 @@ python day-01-SecretEntrance/solution-01.py
 | 6 | TrashCompactor | <details><summary>•••</summary><code>5733696195703</code></details> | <details><summary>•••</summary><code>10951882745757</code></details> |
 | 7 | Laboratories | <details><summary>•••</summary><code>1646</code></details> | <details><summary>•••</summary><code>32451134474991</code></details> |
 | 8 | Playground | <details><summary>•••</summary><code>98696</code></details> | <details><summary>•••</summary><code>2245203960</code></details> |
+| 9 | MovieTheater | <details><summary>•••</summary><code>4735268538</code></details> | <details><summary>•••</summary><code>1537458069</code></details> |
 
 **Notes**
 - The solutions are plain Python scripts that read `input.txt` from their folder by default. If you change the input file location, update the script call accordingly.
